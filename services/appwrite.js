@@ -1,5 +1,5 @@
 import { Client, Databases, Account } from 'react-native-appwrite';
-import { Platform } from 'react-native';
+import { Platform } from 'react-native'; 
 
 const config = {
   endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
@@ -10,7 +10,10 @@ const config = {
   },
 };
 
-const client = new Client()
+
+
+
+const client = new Client()      // Without this, you cannot talk to your Appwrite backend. // This creates an Appwrite client and connects it to your specific project and endpoint.
   .setEndpoint(config.endpoint)
   .setProject(config.projectId);
 
@@ -28,3 +31,4 @@ const database = new Databases(client);
 const account = new Account(client);
 
 export { database, config, client, account };
+
